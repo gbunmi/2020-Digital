@@ -1,3 +1,4 @@
+import React from "react";
 import { Anim } from "./ui/Anim";
 import { QuoteMark } from "./ui/Logos";
 

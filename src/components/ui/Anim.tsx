@@ -1,24 +1,23 @@
 import { motion } from "motion/react";
 import React, { ReactNode } from "react";
 
-interface AnimProps {
-  children: ReactNode;
+export interface AnimProps {
+  children?: ReactNode;
   delay?: number;
   direction?: "up" | "down" | "left" | "right" | "scale";
   className?: string;
   style?: React.CSSProperties;
   once?: boolean;
-  key?: React.Key;
 }
 
-export function Anim({ 
+export const Anim: React.FC<AnimProps> = ({ 
   children, 
   delay = 0, 
   direction = "up", 
   className = "", 
   style = {},
   once = true 
-}: AnimProps) {
+}) => {
   const variants = {
     hidden: {
       opacity: 0,

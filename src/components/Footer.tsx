@@ -6,7 +6,7 @@ export function Footer() {
   const linkStyle = "text-white no-underline text-2xl font-semibold tracking-[-0.48px] hover:opacity-70 transition-opacity";
   
   return (
-    <footer className="bg-[#d73a3b] p-10 py-16 text-white flex flex-col gap-8">
+    <footer id="contact-footer" className="bg-[#d73a3b] p-10 py-16 text-white flex flex-col gap-8">
       <div className="flex flex-col gap-10">
         <div className="flex justify-between">
           <div className="flex flex-col gap-6">

@@ -4,15 +4,15 @@
  */
 
 import { useState, useEffect, useCallback } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav";
-import { Hero } from "./components/Hero";
-import { Services } from "./components/Services";
-import { About } from "./components/About";
-import { Works } from "./components/Works";
-import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { LoaderLogo } from "./components/ui/Logos";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import WorksPage from "./pages/WorksPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -24,32 +24,35 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(handleDone, 3000); // Reduced from 5s for better UX in preview
+    const timer = setTimeout(handleDone, 2000);
     return () => clearTimeout(timer);
   }, [handleDone]);
 
   return (
-    <div className="font-['Instrument_Sans',sans-serif] text-[#2d2d2d] bg-[#f3f3f3] overflow-x-hidden">
-      {loading && (
-        <div 
-          className={`fixed inset-0 z-[9999] bg-[#d73a3b] flex items-center justify-center transition-opacity duration-700 ${
-            exiting ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-        >
-          <LoaderLogo />
-        </div>
-      )}
-      
-      <Nav />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <Works />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="font-['Instrument_Sans',sans-serif] text-[#2d2d2d] bg-[#f3f3f3] min-h-screen overflow-x-hidden">
+        {loading && (
+          <div 
+            className={`fixed inset-0 z-[9999] bg-[#d73a3b] flex items-center justify-center transition-opacity duration-700 ${
+              exiting ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
+            <LoaderLogo />
+          </div>
+        )}
+        
+        <Nav />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/works" element={<WorksPage />} />
+          </Routes>
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }

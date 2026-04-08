@@ -1,9 +1,15 @@
 import React from "react";
 import { Anim } from "./ui/Anim";
 
-function Placeholder({ className = "", style = {}, key }: { className?: string; style?: React.CSSProperties; key?: React.Key }) {
-  return <div className={`bg-[#d0d0d0] ${className}`} style={style} />;
+interface PlaceholderProps {
+  className?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
+
+const Placeholder: React.FC<PlaceholderProps> = ({ className = "", style = {} }) => {
+  return <div className={`bg-[#d0d0d0] ${className}`} style={style} />;
+};
 
 function HeroTicker() {
   return (
