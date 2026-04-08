@@ -1,6 +1,7 @@
+import React from "react";
 import { Anim } from "./ui/Anim";
 
-const cardDesc = "20/20 Digital was founded in 2017 and has worked with organizations across industries that include financial services, healthcare, government, technology, legal, education, startups, and travel & tourism.";
+const cardDesc = "2020 Digital was founded in 2017 and has worked with organizations across industries that include financial services, healthcare, government, technology, legal, education, startups, and travel & tourism.";
 
 export function About() {
   return (

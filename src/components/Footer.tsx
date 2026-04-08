@@ -35,7 +35,7 @@ export function Footer() {
       </div>
       
       <div className="flex justify-between items-center text-base tracking-[-0.32px]">
-        <span className="text-white/80 font-medium">© 2026 20/20 Digital</span>
+        <span className="text-white/80 font-medium">© 2026 2020 Digital</span>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); scrollToTop(); }} 
