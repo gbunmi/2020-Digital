@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Anim } from "./ui/Anim";
 
 const works = [
@@ -37,9 +38,9 @@ export function Works() {
           ))}
         </div>
         
-        <button className="inline-flex items-center justify-center border-2 border-black/60 rounded-xl px-4 py-6 bg-transparent text-black font-semibold text-2xl tracking-[-0.48px] cursor-pointer hover:bg-black hover:text-white transition-all">
+        <Link to="/works" className="inline-flex items-center justify-center border-2 border-black/60 rounded-xl px-4 py-6 bg-transparent text-black font-semibold text-2xl tracking-[-0.48px] cursor-pointer hover:bg-black hover:text-white transition-all no-underline">
           See all works
-        </button>
+        </Link>
       </div>
     </section>
   );

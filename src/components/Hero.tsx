@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Anim } from "./ui/Anim";
 
 interface PlaceholderProps {
@@ -46,9 +47,9 @@ export function Hero() {
           </h1>
         </Anim>
         <Anim direction="up" delay={0.3}>
-          <button className="bg-[#d73a3b] text-white border-none rounded-xl p-4 font-semibold text-base tracking-[-0.32px] cursor-pointer whitespace-nowrap hover:bg-[#b52e2f] transition-colors">
+          <Link to="/services" className="bg-[#d73a3b] text-white border-none rounded-xl p-4 font-semibold text-base tracking-[-0.32px] cursor-pointer whitespace-nowrap hover:bg-[#b52e2f] transition-colors no-underline">
             View Services
-          </button>
+          </Link>
         </Anim>
       </div>
       <HeroTicker />

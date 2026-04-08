@@ -9,6 +9,7 @@ import { Nav } from "./components/Nav";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { LoaderLogo } from "./components/ui/Logos";
+import ScrollToTop from "./components/ui/ScrollToTop";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -30,6 +31,7 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="font-['Instrument_Sans',sans-serif] text-[#2d2d2d] bg-[#f3f3f3] min-h-screen overflow-x-hidden">
         {loading && (
           <div 
